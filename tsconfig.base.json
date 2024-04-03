@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "typeRoots": ["node_modules/@types"],
+    "target": "ES2021",
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "removeComments": true,
+    "sourceMap": false,
+    "strict": false,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "incremental": true,
+    "tsBuildInfoFile": "./dist/tsbuildinfo",
+    "types": ["node"],
+    "paths": {
+      "@clis/astro": ["astro/src/index.ts"]
+    }
+  },
+  "include": ["actions", "bin", "commands", "enums", "lib", "src"],
+  "exclude": ["node_modules"]
+}

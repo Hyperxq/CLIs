@@ -1,0 +1,9 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "types": [],
+  },
+  "include": ["actions", "bin", "commands", "enums", "lib", "src"],
+  "exclude": ["node_modules"],
+}

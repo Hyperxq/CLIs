@@ -1,0 +1,9 @@
+node_modules/
+dist/
+packages/**/node_modules/
+/tests/
+**/logo.ts
+**/messages.ts
+commitlint.config.js
+packages/**/rollup.config.js
+packages/**/vite.config.ts

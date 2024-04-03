@@ -1,0 +1,84 @@
+{
+  "name": "@pbuilder/astro-cli",
+  "version": "1.0.2",
+  "description": "A CLI for astro that uses schematics https://schematics.pbuilder.dev/",
+  "private": false,
+  "engines": {
+    "node": ">= 20"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "bin": {
+    "pastro": "bin/builder.js"
+  },
+  "scripts": {
+    "clean": "rimraf ../../dist/astro",
+    "build": "rollup -c --bundleConfigAsCjs",
+    "build:watch": "node watch-mode.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:local": "npm run build && cd ../../dist/astro && npm link",
+    "publish:verdaccio": "npm run build && cd ../../dist/astro && npm publish --registry http://localhost:4873",
+    "publish": "npm run build && cd ../../dist/astro && npm publish --access=public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hyperxq/CLIs"
+  },
+  "keywords": [
+    "Schematics",
+    "Astro",
+    "CLI"
+  ],
+  "author": "Hyperxq",
+  "license": "ISC",
+  "dependencies": {
+    "@angular-devkit/core": "^17.0.1",
+    "@angular-devkit/schematics": "^17.0.1",
+    "@angular-devkit/schematics-cli": "^17.0.1",
+    "@danils/angular-builder": "^0.0.67",
+    "@schematics/angular": "^17.0.1",
+    "@types/npm-registry-fetch": "^8.0.7",
+    "ansi-colors": "^4.1.3",
+    "axios": "^1.6.0",
+    "case-anything": "^2.1.13",
+    "commander": "^11.1.0",
+    "inquirer": "8.2.6",
+    "node-emoji": "^2.1.0",
+    "npm-package-arg": "^11.0.1",
+    "npm-registry-fetch": "^16.1.0",
+    "ora": "5.4.1",
+    "winston": "^3.11.0",
+    "winston-console-format": "^1.0.8",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^18.6.0",
+    "@commitlint/config-conventional": "^18.6.0",
+    "@rollup/plugin-alias": "^5.1.0",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-swc": "^0.3.0",
+    "@types/inquirer": "^9.0.6",
+    "@types/node-emoji": "^2.1.0",
+    "@types/npm-package-arg": "^6.1.4",
+    "@typescript-eslint/eslint-plugin": "^6.20.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-standard-with-typescript": "^43.0.1",
+    "eslint-plugin-header": "^3.1.1",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-promise": "^6.1.1",
+    "glob": "^10.3.10",
+    "rimraf": "^5.0.5",
+    "rollup": "3.29.4",
+    "rollup-plugin-add-shebang": "^0.3.1",
+    "rollup-plugin-cleaner": "^1.0.0",
+    "rollup-plugin-copy": "^3.5.0",
+    "rollup-plugin-dts": "^6.1.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-tsconfig-paths": "^1.5.2",
+    "typescript": "^5.3.3"
+  }
+}

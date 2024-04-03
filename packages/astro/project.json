@@ -1,0 +1,28 @@
+{
+  "name": "astro",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "astro/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/rollup:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "../../dist/astro",
+        "main": "astro/src/public_api.ts",
+        "tsConfig": "astro/tsconfig.lib.json",
+        "assets": [],
+        "project": "astro/package.json",
+        "format": ["cjs", "esm"]
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["{options.reportsDirectory}"],
+      "options": {
+        "reportsDirectory": "../coverage/astro"
+      }
+    }
+  }
+}
